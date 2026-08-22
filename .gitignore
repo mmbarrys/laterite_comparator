@@ -1,69 +1,82 @@
-# dependencies
+# Dependencies
 node_modules/
 
-# next.js
+# Next.js
 .next/
 out/
 
-# production
+# Production builds
 build/
 dist/
 
-# environment
+# Environment files
 .env
 .env.local
 .env.*.local
+.env.production
+.env.development
+.env.test
 
-# logs
+# Logs
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-# python
+# Python cache
 __pycache__/
-*.pyc
+**/__pycache__/
+*.py[cod]
+*$py.class
+
+# Python virtual environments
 .venv/
 venv/
 env/
 
-# ide
+# Python tooling cache
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
+
+# IDE
 .vscode/
 .idea/
 
-# os
+# OS files
 .DS_Store
 Thumbs.db
 
-# local dataset and large files
+# Local database and source data
+database/
 dataset/
+
+# Local field photo tests
+testing/field_photos/
+
+# Archives and large local files
 *.zip
 *.rar
 *.7z
 
-# model files
+# Model files
 *.pt
 *.pth
 *.onnx
 *.bin
 *.safetensors
 
-# cache
-.cache/
-
-# local database files
-database/
-
-# local dataset files
-dataset/
-# generated database validation previews
+# Generated database validation previews
 backend/data_preview/
 
-# local runtime scan outputs
+# Local runtime scan outputs
 backend/runtime_scans/
 
-# generated image feature cache
-backend/feature_cache/
+# Generated image feature cache
+backend/feature_cache/*
+!backend/feature_cache/comparator_features.json
 
-# local field photo tests
-testing/field_photos/
+# Local database-derived zone test photos
+testing/database_zone_photos/
